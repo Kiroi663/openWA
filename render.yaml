@@ -11,5 +11,6 @@ services:
     plan: starter
     disk:
       name: session-disk
+      # Monte le disque Render dans /usr/src/app/sessions
       mountPath: /usr/src/app/sessions
       sizeGB: 1
