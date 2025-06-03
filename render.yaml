@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: openwa-service
+    runtime: docker
+    repo: https://github.com/votre-utilisateur/votre-repo-openwa.git
+    branch: main
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: PORT
+        value: "8080"
+    plan: starter
+    disk:
+      name: session-disk
+      mountPath: /usr/src/app
+      sizeGB: 1
