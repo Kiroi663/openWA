@@ -1,14 +1,15 @@
 services:
   - type: web
-    name: wa-automate
-    env: docker
-    plan: starter
-    dockerfilePath: ./Dockerfile
-    autoDeploy: true
+    name: openwa-service
+    runtime: docker
+    repo: https://github.com/Kiroi663/openWA
+    branch: main
+    dockerfilePath: Dockerfile
     envVars:
-      - key: NODE_ENV
-        value: production
-    ports:
-      - port: 8080
-        protocol: http
-
+      - key: PORT
+        value: "8080"
+    plan: starter
+    disk:
+      name: session-disk
+      mountPath: /usr/src/app
+      sizeGB: 1
