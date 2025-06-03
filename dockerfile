@@ -1,20 +1,7 @@
-# Utiliser l'image Node officielle avec Chrome installé
-FROM zenika/node:20-chrome
-
-# Définir le répertoire de travail
-WORKDIR /app
-
-# Copier les fichiers de configuration et de dépendances
-COPY package*.json ./
-
-# Installer les dépendances
-RUN npm install
-
-# Copier le reste des fichiers de l'application
-COPY . .
-
-# Exposer le port utilisé par l'application
+# Dockerfile pour l’API OpenWA (wa-automate)
+FROM openwa/wa-automate:latest
+# Exposer le port par défaut (8080) ou un port personnalisé
+ENV PORT=8080
 EXPOSE 8080
-
-# Lancer l'application
-CMD ["node", "./node_modules/@open-wa/wa-automate/bin/server.js", "--use-chrome", "--in-docker", "--qr-timeout", "0", "--popup", "--debug", "--force-port", "--disable-qr-code", "--headless", "--ui"]
+# Commande de démarrage : activer l’interface interactive (swagger) et exécuter en headless
+CMD ["--disable-qr-code", "--headless", "--ui"]
