@@ -11,5 +11,5 @@ services:
     plan: starter
     disk:
       name: session-disk
-      mountPath: /usr/src/app
+      mountPath: /usr/src/app/sessions
       sizeGB: 1
