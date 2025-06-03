@@ -2,7 +2,7 @@ services:
   - type: web
     name: openwa-service
     runtime: docker
-    repo: https://github.com/votre-utilisateur/votre-repo-openwa.git
+    repo: https://github.com/Kiroi663/openWA
     branch: main
     dockerfilePath: Dockerfile
     envVars:
