@@ -11,5 +11,7 @@ services:
     plan: starter
     disk:
       name: session-disk
+      # Le dossier /usr/src/app/sessions dans le conteneur 
+      # sera monté sur un volume persistant nommé "session-disk"
       mountPath: /usr/src/app/sessions
       sizeGB: 1
